@@ -6,7 +6,7 @@ function Header({ onRegisterClick }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
         <div className="flex items-center">
           <img src={testLogo} alt="MISA CukCuk" className="h-8 mr-2" />
-          <span className="text-xl font-semibold text-cukcuk-blue">Gold Pro</span>
+          <span className="text-xl font-semibold text-cukcuk-blue">Gold Store Solution</span>
         </div>
         <div className="space-x-4">
           <a href="#what-gpv" className="text-cukcuk-blue hover:underline">Về GPV</a>

@@ -5,7 +5,7 @@ function Features() {
     <section className="py-16 bg-white text-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl md:text-5xl font-bold text-cukcuk-blue mb-8">
-          Tất cả tính năng cho tiệm vàng trên một nơi
+          Mua bán vàng, bạch kim, kim cương, cầm đồ trên một chiếc điện thoại
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-8">
           {/* Feature 1 */}
@@ -19,7 +19,7 @@ function Features() {
               </h3>
             </div>
             <p className="text-lg text-gray-600">
-              Bán hàng nhanh chóng không sai sót trong khâu tính toán. Đổi bù vàng linh động theo khách hàng. Mua hàng có hình ảnh rõ ràng. Tất cả chỉ cần một chiếc điện thoại ngay cả người mới đi làm ngày đầu tiên vẫn có thể sử dụng.
+              Mua bán vàng   nhanh chóng không sai sót trong khâu tính toán. Đổi bù vàng linh động theo khách hàng. Mua hàng có hình ảnh rõ ràng. Tất cả chỉ cần một chiếc điện thoại ngay cả người mới đi làm ngày đầu tiên vẫn có thể sử dụng.
             </p>
           </div>
 
@@ -34,7 +34,7 @@ function Features() {
               </h3>
             </div>
             <p className="text-lg text-gray-600">
-              Thống kê số món bán, mua trong ngày, số món cầm cố, số món chuộc đồ. Chủ tiệm đi xa vẫn có thể dùng điện thoại để theo dõi doanh thu và vàng trong ngày.
+              Thống kê số món bán, mua, số món cầm cố, số món chuộc đồ trong ngày. Chủ tiệm đi xa vẫn có thể dùng điện thoại để theo dõi doanh thu và vàng trong ngày.
             </p>
           </div>
 
@@ -60,7 +60,7 @@ function Features() {
                 4
               </span>
               <h3 className="text-2xl font-semibold text-cukcuk-blue">
-                Chỉ cân dùng một chiếc điện thoại
+                Chỉ cần dùng một chiếc điện thoại
               </h3>
             </div>
             <p className="text-lg text-gray-600">

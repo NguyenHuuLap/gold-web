@@ -7,7 +7,7 @@ function InvoiceManagement() {
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-cukcuk-blue mb-12">
-          Nhận chồng tư vấn tính toán đề khấu ra hóa đơn
+          Nhanh chóng từ khâu tính toán đến xuất hóa đơn
         </h2>
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Left Panel: Image Placeholder */}

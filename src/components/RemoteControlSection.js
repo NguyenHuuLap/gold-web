@@ -28,11 +28,11 @@ function RemoteControlSection() {
             </li>
             <li className="flex items-start gap-2">
               <FaChevronRight className="mt-1 text-[#0043c2]" />
-              Thống kê số hàng còn lại trong kho
+              Thống kê số món hàng trong kho.
             </li>
             <li className="flex items-start gap-2">
               <FaChevronRight className="mt-1 text-[#0043c2]" />
-              Báo cáo số món hàng bán theo loại hàng: nhẫn, dây chuyền, lắc tay, kiềng cổ 
+              Báo cáo số món hàng bán theo loại hàng: nhẫn, dây chuyền, lắc tay, kiềng cổ... 
             </li>
             <li className="flex items-start gap-2">
               <FaChevronRight className="mt-1 text-[#0043c2]" />

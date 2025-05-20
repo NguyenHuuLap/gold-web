@@ -6,12 +6,12 @@ function Hero({ onRegisterClick }) {
     <section className="pt-32 pb-16 bg-cukcuk-light-blue text-center relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-5xl md:text-6xl font-bold text-cukcuk-blue mb-10">
-          Phần mềm chuyên dành cho tiêu vận
+          Phần mềm chuyên dành cho tiệm vàng
         </h1>
         <div className="flex justify-center space-x-6 mb-12">
           <button
             onClick={onRegisterClick}
-            className="bg-cukcuk-blue text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors"
+                      className="bg-cukcuk-blue text-white px-6 py-3 rounded-Tất cả tính năng cho tiệm vàng font-semibold hover:bg-blue-700 transition-colors"
           >
             Đăng thử miễn phí
           </button>
