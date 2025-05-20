@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Features from '../components/Features';
@@ -13,13 +13,28 @@ import CustomerShowcase from '../components/CustomerShowcase';
 import GoldSolutionSection from '../components/GoldSolutionSection';
 import RegistrationForm from '../components/RegistrationForm';
 import RegisterForm from '../components/RegisterForm';
+import Popup from '../components/Popup';
 import Footer from '../components/Footer';
 
 function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+    sessionStorage.setItem('popupShown', 'true');
+  };
+
+  useEffect(() => {
+   const popupShown = sessionStorage.getItem('popupShown');
+    if (!popupShown) {
+      setIsPopupOpen(true);
+    }
+  }, []);
+
 
   return (
     <>
@@ -39,6 +54,14 @@ function Home() {
       <Footer />
       <RegisterForm isOpen={isModalOpen} onClose={closeModal} />
 
+      <Popup
+        isOpen={isPopupOpen}
+        onClose={closePopup}
+        title="Gold Store Solution"
+        description="Ứng dụng Vàng giúp bạn quản lý tài chính, đầu tư vàng dễ dàng và an toàn. Tải ngay để trải nghiệm!"
+        // ctaText="Tải Ngay"
+        // ctaLink="https://example.com"
+      />
     </>
   );
 }
