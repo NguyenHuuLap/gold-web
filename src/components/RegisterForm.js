@@ -2,39 +2,75 @@ import { useState } from 'react';
 
 function RegisterForm({ isOpen, onClose }) {
   const [formData, setFormData] = useState({
-    fullName: '',
+    name: '',
     phone: '',
     email: '',
   });
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const proxyURL = 'http://localhost:3001/proxy'; // URL của proxy server
 
   const validate = () => {
     const newErrors = {};
-    if (!formData.fullName.trim()) newErrors.fullName = 'Họ và tên là bắt buộc';
-    if (!formData.phone.trim()) newErrors.phone = 'Số điện thoại là bắt buộc';
-    else if (!/^\d{10}$/.test(formData.phone)) newErrors.phone = 'Số điện thoại phải có 10 chữ số';
-    if (!formData.email.trim()) newErrors.email = 'Email là bắt buộc';
-    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email không hợp lệ';
-    return newErrors;
-  };
+    const nameValue = formData.name || '';
+    const phoneValue = formData.phone || '';
+    const emailValue = formData.email || '';
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const validationErrors = validate();
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
-    }
-    console.log('Form submitted:', formData);
-    setFormData({ fullName: '', phone: '', email: '' });
-    setErrors({});
-    onClose();
+    if (!nameValue.trim()) newErrors.name = 'Họ và tên là bắt buộc';
+    if (!phoneValue.trim()) newErrors.phone = 'Số điện thoại là bắt buộc';
+    else if (!/^\d{10}$/.test(phoneValue)) newErrors.phone = 'Số điện thoại phải có 10 chữ số';
+    if (!emailValue.trim()) newErrors.email = 'Email là bắt buộc';
+    else if (!/\S+@\S+\.\S+/.test(emailValue)) newErrors.email = 'Email không hợp lệ';
+    return newErrors;
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
     setErrors({ ...errors, [name]: '' });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      // console.log('Dữ liệu gửi đi:', formData);
+      // console.log('Body:', new URLSearchParams(formData).toString());
+
+      const response = await fetch(proxyURL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Phản hồi từ proxy server không thành công');
+      }
+
+      const result = await response.json();
+      if (result.result === 'success') {
+        alert('Đăng ký thành công! Email xác nhận đã được gửi.');
+        setFormData({ name: '', phone: '', email: '' });
+        setErrors({});
+        onClose();
+      } else {
+        throw new Error(result.message || 'Lỗi không xác định');
+      }
+    } catch (error) {
+      console.error('Lỗi khi gửi dữ liệu:', error.message);
+      alert('Có lỗi xảy ra: ' + error.message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (!isOpen) return null;
@@ -53,12 +89,12 @@ function RegisterForm({ isOpen, onClose }) {
             <label className="block text-gray-700 mb-1">Họ và tên</label>
             <input
               type="text"
-              name="fullName"
-              value={formData.fullName}
+              name="name"
+              value={formData.name}
               onChange={handleChange}
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-cukcuk-blue"
             />
-            {errors.fullName && <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>}
+            {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
           </div>
           <div className="mb-4">
             <label className="block text-gray-700 mb-1">Số điện thoại</label>
@@ -87,14 +123,18 @@ function RegisterForm({ isOpen, onClose }) {
               type="button"
               onClick={onClose}
               className="px-4 py-2 text-gray-600 hover:text-gray-800 mr-2"
+              disabled={isSubmitting}
             >
               Hủy
             </button>
             <button
               type="submit"
-              className="px-4 py-2 bg-cukcuk-orange text-white rounded-lg hover:bg-orange-600"
+              className={`px-4 py-2 bg-cukcuk-orange text-white rounded-lg hover:bg-orange-600 ${
+                isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
+              }`}
+              disabled={isSubmitting}
             >
-              Gửi
+              {isSubmitting ? 'ĐANG GỬI...' : 'Gửi'}
             </button>
           </div>
         </form>
