@@ -1,13 +1,13 @@
 import React from 'react';
 import { FaCheck } from 'react-icons/fa';
-import test1 from '../assets/test1.png';
+import test1 from '../assets/goidienGoldee.png';
 
 function PaymentConsultation({ onRegisterClick }) {
   return (
     <section className="py-16 bg-cukcuk-light-blue">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-cukcuk-blue mb-12">
-          Đăng ký nhận tư vấn miễn phí từ chuyên gia MISA CukCuk
+          Đăng ký nhận tư vấn miễn phí cùng chuyên gia Giải Pháp Vàng
         </h2>
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Left Panel: Image Placeholder */}
@@ -23,19 +23,19 @@ function PaymentConsultation({ onRegisterClick }) {
               <li className="flex items-start gap-2">
                 <FaCheck className="text-cukcuk-blue w-5 h-5 mt-1 flex-shrink-0" />
                 <span className="leading-relaxed">
-                  Nhận thông luồng, lời vàng, phân mềm sẽ tư vấn toán ra giá cầm tháp va cao nhất khi do nhận viên se yên tâm cho cam mà không vươt qua gia cam.
+                  Nhập trọng lượng phần mềm sẽ tính toán ra giá cầm thấp hoặc cao nhất khi do nhận viên sẽ dễ dàng cầm mà không lo vượt quá số tiền được phép cầm.
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <FaCheck className="text-cukcuk-blue w-5 h-5 mt-1 flex-shrink-0" />
                 <span className="leading-relaxed">
-                  Tự động cập nhật trạng thái "Qua hạn" mới (tiền cam + tiền lãi) = gia mua.
+                  Tự động cập nhật trạng thái "Quá hạn" nếu (tiền cầm + tiền lãi) >= giá mua vào.
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <FaCheck className="text-cukcuk-blue w-5 h-5 mt-1 flex-shrink-0" />
                 <span className="leading-relaxed">
-                  Hiển thị sản phẩm cam rồng, tranh cu cai khi sản phẩm đủ gay truc khi dem cam.
+                  Hiển thị hình ảnh món đồ cầm, tránh cự cãi khi sản phẩm đã hư trước khi cầm.
                 </span>
               </li>
             </ul>

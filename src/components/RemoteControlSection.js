@@ -1,6 +1,6 @@
 import React from "react";
 import { FaChevronRight } from "react-icons/fa";
-import test1 from '../assets/test1.png';
+import test1 from '../assets/DuLichGoldee.png';
 
 function RemoteControlSection() {
   return (
@@ -28,11 +28,11 @@ function RemoteControlSection() {
             </li>
             <li className="flex items-start gap-2">
               <FaChevronRight className="mt-1 text-[#0043c2]" />
-              Thống kê số món hàng trong kho.
+              Tạo thêm nhân viên và chia ca dễ dàng
             </li>
             <li className="flex items-start gap-2">
               <FaChevronRight className="mt-1 text-[#0043c2]" />
-              Báo cáo số món hàng bán theo loại hàng: nhẫn, dây chuyền, lắc tay, kiềng cổ... 
+              Đi chơi xa vẫn có thể điều chỉnh giá bán/mua/cầm ở tiệm một cách tức thì.
             </li>
             <li className="flex items-start gap-2">
               <FaChevronRight className="mt-1 text-[#0043c2]" />

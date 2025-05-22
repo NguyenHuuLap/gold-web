@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
-import test1 from '../assets/test2.png';
+import test1 from '../assets/khachhang.png';
 
 function CustomerManagementSection() {
   return (

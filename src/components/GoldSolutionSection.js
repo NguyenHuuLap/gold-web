@@ -1,5 +1,5 @@
 import React from 'react';
-import test3 from '../assets/test3.png'; 
+import test3 from '../assets/PhanMemCamVangBanHangGoldee.png'; 
 
 function GoldSolutionSection() {
   return (

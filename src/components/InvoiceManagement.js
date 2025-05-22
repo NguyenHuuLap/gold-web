@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaPrint, FaEye, FaCogs, FaSlidersH } from 'react-icons/fa';
-import test1 from '../assets/test1.png';
+import test1 from '../assets/InGoldee.png';
 
 function InvoiceManagement() {
   return (

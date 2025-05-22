@@ -14,23 +14,25 @@ function Hero({ onRegisterClick }) {
                       className="bg-cukcuk-blue text-white px-6 py-3 rounded-Tất cả tính năng cho tiệm vàng font-semibold hover:bg-blue-700 transition-colors"
           >
             Đăng thử miễn phí
-          </button>
-          <button className="bg-gray-200 text-cukcuk-blue px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition-colors">
-            Khám phá Goldee
-          </button>
+                  </button>
+          <a href="https://apps.apple.com/vn/app/goldee/id6479561244" target="_blank">
+                <button className="bg-gray-200 text-cukcuk-blue px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition-colors">
+                 Khám phá Goldee
+                </button>
+          </a>
         </div>
         <div className="flex justify-center space-x-8 mb-16">
           <div className="flex items-center space-x-2">
             <FaUser className="text-2xl text-cukcuk-blue" />
             <div>
-              <p className="text-3xl font-bold text-cukcuk-blue">54,000+</p>
+              <p className="text-3xl font-bold text-cukcuk-blue">100+</p>
               <p className="text-gray-600 text-sm">Tiệm vàng sử dụng</p>
             </div>
           </div>
           <div className="flex items-center space-x-2">
             <FaGlobe className="text-2xl text-cukcuk-blue" />
             <div>
-              <p className="text-3xl font-bold text-cukcuk-blue">25+</p>
+              <p className="text-3xl font-bold text-cukcuk-blue">15+</p>
               <p className="text-gray-600 text-sm">Có mặt tại nhiều tỉnh thành</p>
             </div>
           </div>

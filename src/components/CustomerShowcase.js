@@ -1,5 +1,5 @@
 import React from 'react';
-import test2 from '../assets/test2.png';
+import test2 from '../assets/tiemvangGoldee.png';
 
 function CustomerShowcase() {
   return (

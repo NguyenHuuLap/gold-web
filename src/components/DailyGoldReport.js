@@ -1,6 +1,6 @@
 import React from "react";
 import { FaCheckCircle } from 'react-icons/fa';
-import test1 from '../assets/test1.png';
+import test1 from '../assets/ThongKeGoldee.png';
 
 function DailyGoldReport({ onRegisterClick }) {
   return (

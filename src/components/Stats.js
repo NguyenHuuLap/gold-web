@@ -5,14 +5,14 @@ const features = [
     text: ["Mua Bán", "Vàng, Bạc, Kim, Kim Cương"],
   },
   {
-    text: ["Xuất hóa đơn điện tử", "từ máy tính tiền"],
-  },
-  {
     text: ["Cầm đồ", "chuộc - đóng lãi -", "mất giấy"],
   },
   {
     text: ["In tem nhãn", "Nhanh chóng dễ", "hiểu"],
-  },
+    },
+    {
+        text: ["Xuất hóa đơn điện tử", "từ máy tính tiền"],
+    },
 ];
 
 const FeaturesSimple = () => {

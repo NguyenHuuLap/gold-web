@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import imageSrc from '../assets/popuptest.png'; // Đường dẫn đến hình ảnh, thay thế nếu cần
+import imageSrc from '../assets/bigSaleGoldee.png'; // Đường dẫn đến hình ảnh, thay thế nếu cần
 
 const Popup = ({ isOpen, onClose, title, description, ctaText, ctaLink }) => {
   useEffect(() => {
@@ -28,7 +28,7 @@ const Popup = ({ isOpen, onClose, title, description, ctaText, ctaLink }) => {
         {/* Phần hình ảnh chiếm 75% chiều cao */}
         <div className="h-3/4 flex items-center justify-center">
           {imageSrc && (
-            <img src={imageSrc} alt="Popup Image" className="max-h-full max-w-full object-contain rounded-t-lg" />
+            <img src={imageSrc} alt="GoldStore Solution (Giải pháp cho tiệm vàng)" className="max-h-full max-w-full object-contain rounded-t-lg" />
           )}
         </div>
         {/* Phần nội dung chiếm 25% chiều cao */}

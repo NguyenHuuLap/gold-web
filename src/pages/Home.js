@@ -58,7 +58,11 @@ function Home() {
         isOpen={isPopupOpen}
         onClose={closePopup}
         title="Gold Store Solution"
-        description="Ứng dụng Vàng giúp bạn quản lý tài chính, đầu tư vàng dễ dàng và an toàn. Tải ngay để trải nghiệm!"
+              description="👉 TẢI NGAY ứng dụng để:
+          ✅ Cập nhật giá vàng theo thời gian thực
+          ✅ Quản lý đơn hàng, khách hàng và tồn kho dễ dàng
+          ✅ Báo cáo tài chính chi tiết và chính xác
+          🎁 Đặc biệt: Nhận ưu đãi hấp dẫn dành riêng cho người dùng mới – chỉ có hôm nay!"
         // ctaText="Tải Ngay"
         // ctaLink="https://example.com"
       />
