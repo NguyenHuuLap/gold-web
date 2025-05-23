@@ -25,6 +25,13 @@ To set up the project locally, follow these steps:
 
    The app will be available at `http://localhost:3000`.
 
+4. Run the backend server:
+    ```bash
+   node server/index.js
+   ```
+
+   The server will typically run on a port specified in the .env file or the default port.
+
 ## Usage
 
 - Navigate through the web app to interact with gold data.
