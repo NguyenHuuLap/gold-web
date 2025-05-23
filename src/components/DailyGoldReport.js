@@ -15,19 +15,19 @@ function DailyGoldReport({ onRegisterClick }) {
 
           <ul className="space-y-6 mt-6">
             <li className="flex items-start gap-3">
-              <FaCheckCircle className="text-[#0043c2] w-5 h-5 mt-1 flex-shrink-0" />
+              <FaCheckCircle className="text-[#1b3e8a] w-5 h-5 mt-1 flex-shrink-0" />
               <p className="text-gray-800">
                 Báo cáo tổng số tiền mua vàng và bán vàng trong ngày theo từng nhân viên
               </p>
             </li>
             <li className="flex items-start gap-3">
-              <FaCheckCircle className="text-[#0043c2] w-5 h-5 mt-1 flex-shrink-0" />
+              <FaCheckCircle className="text-[#1b3e8a] w-5 h-5 mt-1 flex-shrink-0" />
               <p className="text-gray-800">
                 Báo cáo số lượng để thu vào trong ngày, số lượng vàng bán ra theo từng nhân viên
               </p>
             </li>
             <li className="flex items-start gap-3">
-              <FaCheckCircle className="text-[#0043c2] w-5 h-5 mt-1 flex-shrink-0" />
+              <FaCheckCircle className="text-[#1b3e8a] mt-1 w-5 h-5 flex-shrink-0" />
               <p className="text-gray-800">
                 Báo cáo số lượng món cầm, món chuộc, tổng tiền cầm và chuộc trong ngày,
                 tổng lãi thu được theo từng nhân viên

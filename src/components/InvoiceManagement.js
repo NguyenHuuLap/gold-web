@@ -4,7 +4,7 @@ import test1 from '../assets/InGoldee.png';
 
 function InvoiceManagement() {
   return (
-    <section className="py-16 bg-white">
+    <section id="why-gpv" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-cukcuk-blue mb-12">
           Nhanh chóng từ khâu tính toán đến xuất hóa đơn

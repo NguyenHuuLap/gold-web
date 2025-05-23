@@ -3,7 +3,7 @@ import { FaUser, FaGlobe } from 'react-icons/fa';
 
 function Hero({ onRegisterClick }) {
   return (
-    <section className="pt-32 pb-16 bg-cukcuk-light-blue text-center relative">
+    <section id="what-gpv" className="pt-32 pb-16 bg-cukcuk-light-blue text-center relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-5xl md:text-6xl font-bold text-cukcuk-blue mb-10">
           Phần mềm chuyên dành cho tiệm vàng
@@ -11,14 +11,14 @@ function Hero({ onRegisterClick }) {
         <div className="flex justify-center space-x-6 mb-12">
           <button
             onClick={onRegisterClick}
-                      className="bg-cukcuk-blue text-white px-6 py-3 rounded-Tất cả tính năng cho tiệm vàng font-semibold hover:bg-blue-700 transition-colors"
+            className="bg-cukcuk-blue text-white px-6 py-3 rounded-Tất cả tính năng cho tiệm vàng font-semibold hover:bg-blue-700 transition-colors"
           >
             Đăng thử miễn phí
-                  </button>
+          </button>
           <a href="https://apps.apple.com/vn/app/goldee/id6479561244" target="_blank">
-                <button className="bg-gray-200 text-cukcuk-blue px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition-colors">
-                 Khám phá Goldee
-                </button>
+            <button className="bg-gray-200 text-cukcuk-blue px-6 py-3 rounded-full font-semibold hover:bg-gray-300 transition-colors">
+              Khám phá Goldee
+            </button>
           </a>
         </div>
         <div className="flex justify-center space-x-8 mb-16">

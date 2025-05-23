@@ -52,7 +52,7 @@ function RegistrationForm() {
     };
 
     return (
-        <div className="flex flex-col md:flex-row items-center justify-center gap-10 bg-white py-10 px-4">
+        <div id="contact" className="flex flex-col md:flex-row items-center justify-center gap-10 bg-white py-10 px-4">
             <div className="max-w-sm  flex flex-row flex-wrap gap-10">
                 <a  href="https://apps.apple.com/vn/app/goldee/id6479561244" target="_blank">
                     <img src={appleImage} alt="download Goldee on Apple Store" width="95px" />

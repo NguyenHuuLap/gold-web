@@ -3,7 +3,7 @@ import test2 from '../assets/tiemvangGoldee.png';
 
 function CustomerShowcase() {
   return (
-    <section className="py-16 bg-white">
+    <section id="faq" className="py-16 bg-white">
       <div className="max-w-5xl mx-auto px-4 text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-cukcuk-blue mb-4">
           Khách hàng của Giải Pháp Vàng (GoldStore Solution)

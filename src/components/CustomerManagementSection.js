@@ -2,7 +2,7 @@ import React from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
 import test1 from '../assets/khachhang.png';
 
-function CustomerManagementSection() {
+function CustomerManagementSection({ onRegisterClick }) {
   return (
     <div className="bg-cukcuk-light-blue py-10 px-4 flex flex-col md:flex-row items-center justify-center gap-10">
       {/* Trái: Hình ảnh máy tính + giao diện */}
@@ -37,7 +37,9 @@ function CustomerManagementSection() {
           </li>
         </ul>
 
-        <button className="bg-[#1b3e8a] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#152f6a] transition">
+        <button
+          onClick={onRegisterClick}
+          className="bg-cukcuk-blue text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
           NHẬN TƯ VẤN
         </button>
       </div>

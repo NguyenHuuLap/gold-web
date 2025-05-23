@@ -45,7 +45,7 @@ function Home() {
       <InvoiceManagement />
       <PaymentConsultation onRegisterClick={openModal} />
       <DailyGoldReport onRegisterClick={openModal} />
-      <CustomerManagementSection />
+      <CustomerManagementSection onRegisterClick={openModal} />
       <RemoteControlSection />
       <Integration onRegisterClick={openModal} />
       <CustomerShowcase />

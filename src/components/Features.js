@@ -2,7 +2,7 @@ import React from 'react';
 
 function Features() {
   return (
-    <section className="py-16 bg-white text-center">
+    <section id="features" className="py-16 bg-white text-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl md:text-5xl font-bold text-cukcuk-blue mb-8">
           Mua bán vàng, bạch kim, kim cương, cầm đồ trên một chiếc điện thoại
