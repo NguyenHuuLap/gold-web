@@ -26,7 +26,7 @@ const transporter = nodemailer.createTransport({
 // Hàm gửi email
 const sendConfirmationEmail = async (toEmail, name) => {
   const mailOptions = {
-    from: 'nguyenlap1910@gmail.com', 
+    from: 'nguyenlap1910@gmail.com',
     to: toEmail,
     subject: 'Xác nhận đăng ký thành công',
     html: `
@@ -55,7 +55,9 @@ app.post('/proxy', async (req, res) => {
   try {
     // Chuyển dữ liệu từ req.body thành URL-encoded
     const formData = new URLSearchParams(req.body).toString();
+    // console.log('📥 Nhận từ frontend:', req.body);
 
+    // console.log('📤 Dữ liệu gửi tới Google Sheet:', formData);
     // Gửi dữ liệu lên Google Sheet
     const response = await axios.post(scriptURL, formData, {
       headers: {

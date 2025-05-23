@@ -25,6 +25,11 @@ function RegisterForm({ isOpen, onClose }) {
     return newErrors;
   };
 
+  const formattedData = {
+  ...formData,
+  phone: formData.phone.toString(),
+};
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -41,15 +46,15 @@ function RegisterForm({ isOpen, onClose }) {
 
     setIsSubmitting(true);
     try {
-      // console.log('Dữ liệu gửi đi:', formData);
-      // console.log('Body:', new URLSearchParams(formData).toString());
+      console.log('Dữ liệu gửi đi:', formData);
+      console.log('Body:', new URLSearchParams(formData).toString());
 
       const response = await fetch(proxyURL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(formattedData),
       });
 
       if (!response.ok) {
