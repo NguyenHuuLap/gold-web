@@ -26,7 +26,7 @@ const transporter = nodemailer.createTransport({
 // Hàm gửi email
 const sendConfirmationEmail = async (toEmail, name) => {
   const mailOptions = {
-    from: 'nguyenlap1910@gmail.com',
+    from: 'Gold Store Solution',
     to: toEmail,
     subject: 'Xác nhận đăng ký thành công',
     html: `
@@ -70,12 +70,14 @@ app.post('/proxy', async (req, res) => {
       throw new Error('Không thể ghi dữ liệu vào Google Sheet');
     }
 
-    // Gửi email xác nhận đến người dùng
+    // Gửi email xác nhận đến người dùng nếu email được cung cấp
     const { name, email } = req.body;
-    await sendConfirmationEmail(email, name);
+    if (email && email.trim()) {
+      await sendConfirmationEmail(email, name);
+    }
 
     // Trả về phản hồi thành công
-    res.json({ result: 'success', message: 'Dữ liệu đã được ghi và email xác nhận đã gửi!' });
+    res.json({ result: 'success', message: 'Dữ liệu đã được ghi' + (email && email.trim() ? ' và email xác nhận đã gửi!' : '') });
   } catch (error) {
     console.error('Lỗi:', error.message);
     res.status(500).json({ result: 'error', message: error.message });

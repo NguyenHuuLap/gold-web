@@ -9,10 +9,10 @@ const features = [
   },
   {
     text: ["In tem nhãn", "Nhanh chóng dễ", "hiểu"],
-    },
-    {
-        text: ["Xuất hóa đơn điện tử", "từ máy tính tiền"],
-    },
+  },
+  {
+    text: ["Xuất hóa đơn điện tử", "từ máy tính tiền"],
+  },
 ];
 
 const FeaturesSimple = () => {

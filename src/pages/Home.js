@@ -15,6 +15,7 @@ import RegistrationForm from '../components/RegistrationForm';
 import RegisterForm from '../components/RegisterForm';
 import Popup from '../components/Popup';
 import Footer from '../components/Footer';
+import PricingTable from '../components/PricingTable';
 
 function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -29,7 +30,7 @@ function Home() {
   };
 
   useEffect(() => {
-   const popupShown = sessionStorage.getItem('popupShown');
+    const popupShown = sessionStorage.getItem('popupShown');
     if (!popupShown) {
       setIsPopupOpen(true);
     }
@@ -50,6 +51,7 @@ function Home() {
       <Integration onRegisterClick={openModal} />
       <CustomerShowcase />
       <GoldSolutionSection />
+      <PricingTable />
       <RegistrationForm onRegisterClick={openModal} />
       <Footer />
       <RegisterForm isOpen={isModalOpen} onClose={closeModal} />
@@ -58,13 +60,13 @@ function Home() {
         isOpen={isPopupOpen}
         onClose={closePopup}
         title="Gold Store Solution"
-              description="👉 TẢI NGAY ứng dụng để:
+        description="👉 TẢI NGAY ứng dụng để:
           ✅ Cập nhật giá vàng theo thời gian thực
           ✅ Quản lý đơn hàng, khách hàng và tồn kho dễ dàng
           ✅ Báo cáo tài chính chi tiết và chính xác
           🎁 Đặc biệt: Nhận ưu đãi hấp dẫn dành riêng cho người dùng mới – chỉ có hôm nay!"
-        // ctaText="Tải Ngay"
-        // ctaLink="https://example.com"
+      // ctaText="Tải Ngay"
+      // ctaLink="https://example.com"
       />
     </>
   );

@@ -52,14 +52,14 @@ function RegistrationForm() {
     };
 
     return (
-        <div id="contact" className="flex flex-col md:flex-row items-center justify-center gap-10 bg-white py-10 px-4">
+        <div id="contact" className="flex flex-col md:flex-row items-center justify-center gap-10 bg-cukcuk-light-blue py-10 px-4">
             <div className="max-w-sm  flex flex-row flex-wrap gap-10">
-                <a  href="https://apps.apple.com/vn/app/goldee/id6479561244" target="_blank">
+                <a href="https://apps.apple.com/vn/app/goldee/id6479561244" target="_blank">
                     <img src={appleImage} alt="download Goldee on Apple Store" width="95px" />
                     <button class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-red-500 ...">
                         Tải app Goldee
                     </button>
-                 </a>
+                </a>
                 <a href="https://zalo.me/0987070157" target="_blank">
                     <img src={zaloImage} alt="Liên hệ qua Zalo" width="100px" />
                     <button class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-red-500 ...">

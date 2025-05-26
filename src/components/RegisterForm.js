@@ -15,20 +15,18 @@ function RegisterForm({ isOpen, onClose }) {
     const newErrors = {};
     const nameValue = formData.name || '';
     const phoneValue = formData.phone || '';
-    const emailValue = formData.email || '';
 
     if (!nameValue.trim()) newErrors.name = 'Họ và tên là bắt buộc';
     if (!phoneValue.trim()) newErrors.phone = 'Số điện thoại là bắt buộc';
     else if (!/^\d{10}$/.test(phoneValue)) newErrors.phone = 'Số điện thoại phải có 10 chữ số';
-    if (!emailValue.trim()) newErrors.email = 'Email là bắt buộc';
-    else if (!/\S+@\S+\.\S+/.test(emailValue)) newErrors.email = 'Email không hợp lệ';
+
     return newErrors;
   };
 
   const formattedData = {
-  ...formData,
-  phone: formData.phone.toString(),
-};
+    ...formData,
+    phone: formData.phone.toString(),
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -63,7 +61,7 @@ function RegisterForm({ isOpen, onClose }) {
 
       const result = await response.json();
       if (result.result === 'success') {
-        alert('Đăng ký thành công! Email xác nhận đã được gửi.');
+        alert('Đăng ký thành công!' + (formData.email ? ' Email xác nhận đã được gửi.' : ''));
         setFormData({ name: '', phone: '', email: '' });
         setErrors({});
         onClose();
@@ -134,9 +132,8 @@ function RegisterForm({ isOpen, onClose }) {
             </button>
             <button
               type="submit"
-              className={`px-4 py-2 bg-cukcuk-orange text-white rounded-lg hover:bg-orange-600 ${
-                isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
-              }`}
+              className={`px-4 py-2 bg-cukcuk-orange text-white rounded-lg hover:bg-orange-600 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
               disabled={isSubmitting}
             >
               {isSubmitting ? 'ĐANG GỬI...' : 'Gửi'}

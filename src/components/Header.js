@@ -1,11 +1,11 @@
-import testLogo from '../assets/Test.png'; 
+import testLogo from '../assets/Test.png';
 
 function Header({ onRegisterClick }) {
   return (
     <header className="bg-white shadow-md fixed w-full z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
         <div className="flex items-center">
-          <img src={testLogo} alt="MISA CukCuk" className="h-8 mr-2" />
+          <img src={testLogo} alt="Gold Store Solution" className="h-8 mr-2" />
           <span className="text-xl font-semibold text-cukcuk-blue">Gold Store Solution</span>
         </div>
         <div className="space-x-4">
@@ -13,6 +13,7 @@ function Header({ onRegisterClick }) {
           <a href="#features" className="text-cukcuk-blue hover:underline">Tính năng nổi bật</a>
           <a href="#why-gpv" className="text-cukcuk-blue hover:underline">Vì sao chọn GPV</a>
           <a href="#faq" className="text-cukcuk-blue hover:underline">Khách hàng nói</a>
+          <a href="#pricing" className="text-cukcuk-blue hover:underline">Báo giá</a>
           <a href="#contact" className="text-cukcuk-blue hover:underline">Tư vấn</a>
         </div>
         <button

@@ -11,7 +11,7 @@ function PaymentConsultation({ onRegisterClick }) {
         </h2>
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Left Panel: Image Placeholder */}
-            <div className="md:w-1/2 relative">
+          <div className="md:w-1/2 relative">
             <img
               src={test1}
               alt="Invoice Management"
@@ -29,7 +29,7 @@ function PaymentConsultation({ onRegisterClick }) {
               <li className="flex items-start gap-2">
                 <FaCheck className="text-cukcuk-blue w-5 h-5 mt-1 flex-shrink-0" />
                 <span className="leading-relaxed">
-                  Tự động cập nhật trạng thái "Quá hạn" nếu (tiền cầm + tiền lãi) >= giá mua vào.
+                  Tự động cập nhật trạng thái "Quá hạn" nếu (tiền cầm + tiền lãi) &gt;= giá mua vào.
                 </span>
               </li>
               <li className="flex items-start gap-2">
