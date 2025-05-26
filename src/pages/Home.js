@@ -20,9 +20,17 @@ import PricingTable from '../components/PricingTable';
 function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState('');
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  const openModal = (plan) => {
+    setSelectedPlan(plan || '');
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedPlan('');
+  };
 
   const closePopup = () => {
     setIsPopupOpen(false);
@@ -39,22 +47,22 @@ function Home() {
 
   return (
     <>
-      <Header onRegisterClick={openModal} />
-      <Hero onRegisterClick={openModal} />
+      <Header onRegisterClick={() => openModal('')} />
+      <Hero onRegisterClick={() => openModal('')} />
       <Features />
       <Stats />
       <InvoiceManagement />
-      <PaymentConsultation onRegisterClick={openModal} />
-      <DailyGoldReport onRegisterClick={openModal} />
-      <CustomerManagementSection onRegisterClick={openModal} />
+      <PaymentConsultation onRegisterClick={() => openModal('')} />
+      <DailyGoldReport onRegisterClick={() => openModal('')} />
+      <CustomerManagementSection onRegisterClick={() => openModal('')} />
       <RemoteControlSection />
-      <Integration onRegisterClick={openModal} />
+      <Integration onRegisterClick={() => openModal('')} />
       <CustomerShowcase />
       <GoldSolutionSection />
-      <PricingTable />
-      <RegistrationForm onRegisterClick={openModal} />
+      <PricingTable onRegisterClick={openModal} />
+      <RegistrationForm onRegisterClick={() => openModal('')} />
       <Footer />
-      <RegisterForm isOpen={isModalOpen} onClose={closeModal} />
+      <RegisterForm isOpen={isModalOpen} onClose={closeModal} selectedPlan={selectedPlan} />
 
       <Popup
         isOpen={isPopupOpen}

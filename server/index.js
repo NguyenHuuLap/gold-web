@@ -24,28 +24,40 @@ const transporter = nodemailer.createTransport({
 });
 
 // Hàm gửi email
-const sendConfirmationEmail = async (toEmail, name) => {
+const sendConfirmationEmail = async (toEmail, name, plan) => {
+  let emailContent = `
+    <h2>Xin chào ${name},</h2>
+    <p>Cảm ơn bạn đã đăng ký tư vấn! Chúng tôi đã nhận được thông tin của bạn:</p>
+    <ul>
+      <li><strong>Họ và tên:</strong> ${name}</li>
+      <li><strong>Email:</strong> ${toEmail}</li>
+  `;
+  
+  // Kiểm tra và hiển thị plan, nếu không có thì hiển thị thông báo mặc định
+  if (plan && plan.trim()) {
+    emailContent += `<li><strong>Gói dịch vụ:</strong> ${plan}</li>`;
+  } else {
+    emailContent += `<li><strong>Gói dịch vụ:</strong> Chưa chọn gói dịch vụ</li>`;
+  }
+
+  emailContent += `
+    </ul>
+    <p>Chúng tôi sẽ liên hệ với bạn sớm nhất. Nếu có thắc mắc, vui lòng liên hệ qua email này.</p>
+    <p>Trân trọng,<br/>Đội ngũ hỗ trợ</p>
+  `;
+
   const mailOptions = {
     from: 'Gold Store Solution',
     to: toEmail,
     subject: 'Xác nhận đăng ký thành công',
-    html: `
-      <h2>Xin chào ${name},</h2>
-      <p>Cảm ơn bạn đã đăng ký tư vấn! Chúng tôi đã nhận được thông tin của bạn:</p>
-      <ul>
-        <li><strong>Họ và tên:</strong> ${name}</li>
-        <li><strong>Email:</strong> ${toEmail}</li>
-      </ul>
-      <p>Chúng tôi sẽ liên hệ với bạn sớm nhất. Nếu có thắc mắc, vui lòng liên hệ qua email này.</p>
-      <p>Trân trọng,<br/>Đội ngũ hỗ trợ</p>
-    `,
+    html: emailContent,
   };
 
   try {
     await transporter.sendMail(mailOptions);
-    console.log(`Email xác nhận đã được gửi đến ${toEmail}`);
+    // console.log(`Email xác nhận đã được gửi đến ${toEmail}`);
   } catch (error) {
-    console.error('Lỗi khi gửi email:', error.message);
+    // console.error('Lỗi khi gửi email:', error.message);
     throw new Error('Không thể gửi email xác nhận');
   }
 };
@@ -53,15 +65,14 @@ const sendConfirmationEmail = async (toEmail, name) => {
 // Route proxy để gửi dữ liệu lên Google Sheet và gửi email
 app.post('/proxy', async (req, res) => {
   try {
+    // console.log('📥 Dữ liệu nhận từ client:', req.body);
+
     // Chuyển dữ liệu từ req.body thành URL-encoded
     const formData = new URLSearchParams(req.body).toString();
-    // console.log('📥 Nhận từ frontend:', req.body);
-
-    // console.log('📤 Dữ liệu gửi tới Google Sheet:', formData);
     // Gửi dữ liệu lên Google Sheet
-    const response = await axios.post(scriptURL, formData, {
+    const response = await axios.post(scriptURL, req.body, {
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Type': 'application/json',
       },
     });
 
@@ -71,13 +82,19 @@ app.post('/proxy', async (req, res) => {
     }
 
     // Gửi email xác nhận đến người dùng nếu email được cung cấp
-    const { name, email } = req.body;
+    const { name, email, plan } = req.body;
+
+    // console.log('📋 Giá trị của plan:', plan);
+
     if (email && email.trim()) {
-      await sendConfirmationEmail(email, name);
+      await sendConfirmationEmail(email, name, plan);
     }
 
     // Trả về phản hồi thành công
-    res.json({ result: 'success', message: 'Dữ liệu đã được ghi' + (email && email.trim() ? ' và email xác nhận đã gửi!' : '') });
+    res.json({ 
+      result: 'success', 
+      message: 'Dữ liệu đã được ghi' + (email && email.trim() ? ' và email xác nhận đã gửi!' : '') 
+    });
   } catch (error) {
     console.error('Lỗi:', error.message);
     res.status(500).json({ result: 'error', message: error.message });

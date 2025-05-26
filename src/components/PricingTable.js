@@ -1,13 +1,11 @@
 import React from 'react';
 
-function PricingTable() {
+function PricingTable({ onRegisterClick }) {
   return (
     <section className="py-12 bg-white" id="pricing">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center text-[#1A4FA3] mb-8">Bảng phí dịch vụ</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-          {/* Gói dùng chung base class */}
           {[
             {
               title: 'GOLD BASIC',
@@ -71,7 +69,12 @@ function PricingTable() {
                   ))}
                 </ul>
               </div>
-              <button className="mt-6 bg-[#1A4FA3] text-white px-4 py-2 rounded-lg hover:bg-[#163D83] transition-all">
+              <button
+                onClick={() => {
+                  if (onRegisterClick) onRegisterClick(plan.title);
+                }}
+                className="mt-6 bg-[#1A4FA3] text-white px-4 py-2 rounded-lg hover:bg-[#163D83] transition-all"
+              >
                 Đăng ký ngay
               </button>
             </div>
